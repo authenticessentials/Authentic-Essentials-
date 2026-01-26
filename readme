@@ -1,0 +1,187 @@
+# Authentic Essentials – Product Website
+
+A modern, responsive product website built with **HTML, CSS, and JavaScript**, designed for showcasing products, collecting orders/inquiries, and delivering a smooth user experience across desktop and mobile.
+
+This project focuses on **clarity, performance, and simplicity**, with clean UI patterns, responsive navigation, optimized product cards, and form handling via third‑party services (Formspree / Pageclip / EmailJS).
+
+---
+
+## ✨ Features
+
+* **Responsive Navigation**
+
+  * Desktop: Home + Products dropdown
+  * Mobile: Hamburger menu with slide toggle
+  * Active link underline on click
+
+* **Product Pages**
+
+  * Grid-based product layouts
+  * Equal-height product cards
+  * Text truncation with ellipsis for consistency
+  * Dedicated product detail sections
+
+* **Order / Inquiry Forms**
+
+  * Clean, user-friendly form layout
+  * Spam honeypot protection
+  * Success & error feedback states
+  * Optional thank-you page redirect
+
+* **Email Handling Options**
+
+  * Formspree (recommended for client delivery)
+  * Pageclip (zero-JS alternative)
+  * EmailJS (advanced templates & auto-replies)
+
+* **Performance Optimizations**
+
+  * Optimized Unsplash image usage
+  * Lazy loading for images
+  * Mobile-first styling approach
+
+---
+
+## 🧱 Tech Stack
+
+* **HTML5** – semantic markup
+* **CSS3** – Flexbox & Grid
+* **JavaScript (Vanilla)** – interactions & form handling
+* **Hosting** – Vercel (static deployment)
+
+---
+
+## 📁 Project Structure
+
+```
+/project-root
+│
+├── index.html          # Home page
+├── product.html        # Individual product pages
+├── thank-you.html      # Form submission success page
+│
+├── /css
+│   └── styles.css      # Global styles
+│
+├── /js
+│   └── main.js         # Navigation & interactions
+│
+└── /assets
+    └── images/         # Product & UI images
+```
+
+---
+
+## 🧭 Navigation Behavior
+
+### Desktop (≥ 1024px)
+
+* Displays **Home** and **Products**
+* Products expands into a dropdown list
+
+### Mobile (< 1024px)
+
+* Hamburger icon toggles full menu
+* Dropdown converts to stacked list
+
+---
+
+## 🛍️ Product Cards
+
+* CSS Grid ensures consistent alignment
+* Fixed card height for visual balance
+* Product titles and descriptions use ellipsis
+
+```css
+.product-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.product-card h3,
+.product-card p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+```
+
+---
+
+## 📝 Forms & Email Handling
+
+
+### Advanced: **EmailJS**
+
+* Custom email templates
+* Auto-replies supported
+* Requires service ID, template ID & public key
+
+---
+
+## 🤖 Spam Protection (Honeypot)
+
+Hidden input field to catch bots:
+
+```html
+<input type="text" name="company" style="display:none">
+```
+
+If this field is filled, submission is ignored.
+
+---
+
+## ✅ Thank You Page
+
+After successful form submission, users are redirected to:
+
+```
+thankyou.html
+```
+
+Includes:
+
+* Confirmation message
+* Order reassurance
+* Call-to-action back to home
+
+---
+
+## 🚀 Deployment
+
+1. Push project to GitHub
+2. Connect repository to **Vercel**
+3. Deploy as a static site
+4. Attach custom domain (optional)
+
+---
+
+## 🔧 Customization Notes
+
+* Product details are fully editable in HTML
+* Prices can be updated without affecting layout
+* Email providers can be swapped without UI changes
+
+---
+
+## 📌 Best Practices Used
+
+* Mobile-first design
+* Semantic HTML
+* Minimal JavaScript
+* Client-friendly integrations
+* Easy handover & maintenance
+
+---
+
+## 📞 Support & Maintenance
+
+This project is designed for **easy client handover**. No complex backend or database is required. Future updates can be handled by simple content edits or UI tweaks.
+
+---
+
+**Authentic Essentials**
+Modern. Elegant. Reliable.
+**Writer**
+Egbeyemi Boluwatife DAvid

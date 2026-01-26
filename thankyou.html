@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You | Authentic Essentials</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --primary: #1a2433;
+    --accent: #d4a017;
+    --bg: #faf9f6;
+    --text: #2c3e50;
+    --white: #ffffff;
+    --radius: 16px;
+    --shadow: 0 20px 40px rgba(0,0,0,0.06);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card {
+    background: var(--white);
+    padding: 30px 50px;
+    max-width: 560px;
+    width: 100%;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    opacity: 0;
+    animation: cardAppear 1s ease-out forwards;
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.success-animation {
+    margin-bottom: 20px;
+}
+
+.checkmark {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+}
+
+.checkmark__circle {
+    cx: 60;
+    cy: 60;
+    r: 50;
+    fill: rgba(212, 160, 23, 0.15);
+    stroke: var(--accent);
+    stroke-width: 5;
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+    animation: drawCircle 0.8s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark__check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: drawCheck 0.6s cubic-bezier(0.65, 0, 0.45, 1) 0.7s forwards;
+}
+
+@keyframes drawCircle {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes drawCheck {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--accent);
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+p.excitement {
+    font-size: 1.15rem;
+    color: var(--primary);
+    font-weight: 500;
+    margin-top: 30px;
+}
+
+.badge {
+    display: inline-block;
+    background: rgba(212,160,23,0.1);
+    color: var(--accent);
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+a.btn {
+    display: inline-block;
+    margin-top: 20px;
+    background: var(--primary);
+    color: #fff;
+    padding: 16px 40px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: all 0.4s ease;
+    animation: pulse 2s infinite;
+}
+
+a.btn:hover {
+    background: var(--accent);
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(26, 36, 51, 0.3);
+    }
+    70% {
+        box-shadow: 0 0 0 12px rgba(26, 36, 51, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(26, 36, 51, 0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .card {
+        padding: 60px 40px;
+    }
+
+    h1 {
+        font-size: 2.6rem;
+    }
+
+    .checkmark {
+        width: 100px;
+        height: 100px;
+    }
+
+    .checkmark__circle {
+        cx: 60;
+        cy: 50;
+        r: 42;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+    }
+
+    p {
+        font-size: 1.05rem;
+    }
+
+    p.excitement {
+        font-size: 1.1rem;
+    }
+
+    a.btn {
+        padding: 14px 36px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .wrapper {
+        padding: 15px;
+    }
+
+    .card {
+        padding: 25px 30px;
+        border-radius: 12px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+    }
+
+    .badge {
+        padding: 7px 16px;
+        font-size: 0.85rem;
+        margin-bottom: 25px;
+    }
+
+    .success-animation {
+        margin-bottom: 4px;
+    }
+
+    .checkmark {
+        width: 80px;
+        height: 80px;
+    }
+
+    .checkmark__circle {
+        cx: 60;
+        cy: 50;
+        r: 50;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    p.excitement {
+        font-size: 1.05rem;
+        margin-top: 25px;
+    }
+
+    a.btn {
+        padding: 14px 32px;
+        font-size: 0.95rem;
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="wrapper">
+    <div class="card">
+        <span class="badge">Order Received</span>
+
+        <div class="success-animation">
+            <svg class="checkmark" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                <circle class="checkmark__circle" cx="60" cy="60" r="50"/>
+                <path class="checkmark__check" fill="none" stroke="var(--accent)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" d="M35 60 l20 20 l30 -40"/>
+            </svg>
+        </div>
+
+        <h1>Thank You!</h1>
+        <div class="subtitle">Your order was submitted successfully</div>
+
+        <p>
+            Our customer care representative will reach out to you within <strong>24 hours</strong> to confirm details and arrange everything perfectly.
+        </p>
+
+        <p class="excitement">
+            We're truly excited to welcome you and deliver the finest authentic essentials right to your door.
+        </p>
+
+        <a href="/" class="btn">Back to Home</a>
+    </div>
+</div>
+
+<!-- Optional: elegant confetti burst on load -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+<script>
+    confetti({
+        particleCount: 80,
+        spread: 60,
+        origin: { y: 0.65 },
+        colors: ['#d4a017', '#f0d68c', '#1a2433'],
+        ticks: 200,
+        gravity: 0.6,
+        decay: 0.94,
+        startVelocity: 25
+    });
+</script>
+</body>
+</html>

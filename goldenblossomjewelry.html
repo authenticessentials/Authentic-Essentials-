@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Blossom Jewery Set| Authentic Essentials</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+    
+
+    <style>
+        :root {
+            --primary: #1a2433;
+            --accent: #d4a017;
+            --accent-hover: #b88a13;
+            --bg:  #faf9f6;
+            --text: #2c3e50;
+            --muted: #6c757d;
+            --white: #ffffff;
+            --border: #e9ecef;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            --radius: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+        }
+
+        .container {
+            max-width: 1240px;
+            margin: 2.7em auto;
+            padding: 0 24px;
+        }
+
+        /* Header Styling */
+
+        nav a:hover { color: var(--accent); }
+   nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 65px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+        }
+
+   .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color:#1a2433;
+            text-decoration: none;
+            
+            font-family: 'Playfair Display', serif;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+        /* Desktop Nav */
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.caret {
+  font-size: 0.7rem;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  min-width: 260px;
+  padding: 10px 0;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: all 0.25s ease;
+  z-index: 1000;
+}
+
+/* Show dropdown on hover (desktop) */
+.dropdown-menu.on {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 12px 18px;
+  font-size: 0.85rem;
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+.dropdown-menu li a:hover {
+  background: var(--accent);
+  color: white;
+}
+
+         .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger svg {
+            width: 23px;
+            height: 23px;
+            color: #1a2433;
+            transition: all 0.3s ease;
+        }
+        /* Product Section */
+        .product-section {
+            padding: 60px 0;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        /* Image Showcase */
+        .image-showcase {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+        .image-showcaseII{
+            display: flex;
+            justify-content: space-between;
+            gap: 28px;
+        
+        }
+        .image-showcaseII img{
+            width: 100%;
+            object-fit: cover;
+            height: 400px;
+            border-radius: var(--radius);
+        }
+        .image-showcase img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .image-showcase img:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        /* Product Details */
+        .product-header {
+            margin-bottom: 24px;
+        }
+
+        .category-tag {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            font-weight: 700;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .product-header h1 {
+            font-size: 3.2rem;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .price-box {
+            background: var(--white);
+            padding: 24px;
+            border-radius: var(--radius);
+            margin: 32px 0;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .price-label { font-size: 0.9rem; color: var(--muted); }
+        .main-price { font-size: 2rem; font-weight: 700; color: var(--primary); }
+
+        .feature-list {
+            list-style: none;
+            margin: 32px 0;
+        }
+
+        .feature-list li {
+            margin-bottom: 12px;
+            padding-left: 28px;
+            position: relative;
+            font-size: 1rem;
+        }
+
+        .feature-list li::before {
+            content: '✧';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Form Styling */
+        .inquiry-card {
+            background: var(--white);
+            padding: 40px 25px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-top: 60px;
+        }
+
+        .inquiry-card h2 {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .inquiry-card p {
+            color: var(--muted);
+            margin-bottom: 32px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .full-width { grid-column: span 2; }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .input-group label {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        input, textarea, select {
+            padding: 14px 18px;
+            border: 1.5px solid var(--border);
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s;
+            background: #fdfdfd;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: var(--white);
+            box-shadow: 0 0 0 4px rgba(212, 160, 23, 0.1);
+        }
+
+        .submit-btn {
+            background: var(--primary);
+            color: var(--white);
+            padding: 18px 40px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(212, 160, 23, 0.2);
+        }
+
+        .status-msg {
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 8px;
+            display: none;
+            font-weight: 500;
+            text-align: center;
+        }
+        .status-msg.success {
+    background: #eaf6ef;
+    color: #1b5e20;
+}
+
+.status-msg.error {
+    background: #fdecea;
+    color: #7f1d1d;
+}
+
+           /* Footer */
+        footer {
+            background: #0d121a;
+            color: #888;
+            padding: 80px 0 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .footer-links h4 {
+            color: var(--accent);
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #888;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+                .pricing-section {
+  margin: 10px 0 40px;
+  text-align: center;
+}
+
+.pricing-title {
+  font-size: 2rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.price-card {
+  background: white;
+  border-radius: 18px;
+  padding: 28px 20px;
+  box-shadow: var(--shadow);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.price-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+}
+
+.price-card.featured {
+  border-color: var(--accent);
+  transform: scale(1.05);
+}
+
+.badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: white;
+  padding: 6px 14px;
+  font-size: 0.7rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.price-card h3 {
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+
+.old-price {
+  color: red;
+  text-decoration: line-through;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.new-price {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: black;
+  margin-top: 6px;
+}
+
+.pricing-note {
+  margin-top: 28px;
+  font-weight: 600;
+  color: var(--primary);
+}
+        @media (max-width: 992px) {
+            .product-section { grid-template-columns: 1fr; }
+            .form-grid { grid-template-columns: 1fr; }
+            .full-width { grid-column: auto; }
+            .product-header h1 { font-size: 2.5rem; }
+               .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .container{
+                padding: 0 14px;
+            }
+            .hamburger{
+                display: flex;
+            }
+          .image-showcaseII {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+          .image-showcaseII img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+            .image-showcase img {
+                height: 100% !important;
+            }
+             .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                flex-direction: column;
+                gap: 0;
+                transform: translateY(-10px);
+                opacity: 0;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(15px);
+                z-index: 999;
+                pointer-events: none;
+                transition: all 0.3s ease;
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+            }
+            .nav-links li {
+                border-bottom: 1px solid #eee;
+                text-decoration: none !important;
+                list-style: none;
+                display: flex;
+                justify-content: flex-start;
+                width: 100%;
+                color: var(--primary);            }
+            .nav-links a {
+                text-decoration: none !important;
+                width: 100%;
+                height: 100%;
+                     padding: 9px;
+                     font-size: 0.7em;
+                border-bottom: none;
+                color: var(--primary);
+            }
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
+            .nav-links a:hover {
+                background: var(--accent);
+                color: #fff;
+            }
+            .nav-links.open {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: auto;
+            }
+        }
+        .nav-links {
+    gap: 28px;
+}
+
+@media (max-width: 1200px) {
+    .nav-links a {
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav id="navbar">
+        <div class="container nav-content">
+            <a href="#" class="brand">Authentic Essentials</a>
+            <ul class="nav-links" id="navLinks">
+  <li><a href="/">Home</a></li>
+
+  <!-- Products Dropdown -->
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle">
+      Products
+      <span class="caret"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="24" viewBox="0 0 24 24">
+	<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 8l8 8l8-8" />
+</svg></span>
+    </a>
+
+    <ul class="dropdown-menu">
+      <li><a href="./emeraldgracienecklace.html">Emerald Gracie Necklace</a></li>
+      <li><a href="./primefitcaps.html">PrimeFit Cap</a></li>
+      <li><a href="./vinatageshinecklace.html">Vintage Shi Pearl Necklace</a></li>
+      <li><a href="./goldenblossomjewelry.html">Golden Blossom Jewelry</a></li>
+      <li><a href="./royalredautogele.html">Royal Red Auto-Gele</a></li>
+    </ul>
+  </li>
+
+  <li><a href="/">About</a></li>
+  <li><a href="#contact">Contact</a></li>
+</ul>
+
+            <div class="hamburger" id="hamburger">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="24" viewBox="0 0 16 16">
+	<path fill="currentColor" fill-rule="evenodd" d="M0 3.75A.75.75 0 0 1 .75 3h14.5a.75.75 0 0 1 0 1.5H.75A.75.75 0 0 1 0 3.75M0 8a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H.75A.75.75 0 0 1 0 8m.75 3.5a.75.75 0 0 0 0 1.5h14.5a.75.75 0 0 0 0-1.5z" clip-rule="evenodd" />
+</svg>
+            </div>
+        </div>
+    </nav>
+    </header>
+
+    <main class="container">
+        <div class="product-section">
+            <!-- Image Showcase -->
+            <div class="image-showcase">
+                <img src="img/goldenjewerlyset/Gloden Blossom Jewel.jpeg " alt="Emerald Necklace 1">
+                <img src="img/goldenjewerlyset/woman1.jpg" alt="Emerald Necklace 2">
+                <img src="img/goldenjewerlyset/e6533647-58db-40ba-8087-bfecda4c1718.jpg" alt="Emerald Necklace 3">
+                <img src="img/goldenjewerlyset/woman2.jpg" alt="Emerald Necklace 4">
+                 <img  src="img/goldenjewerlyset/6d2878bf-9b6b-457c-8cf4-57ebeccdf47d.jpg" alt="">
+            <img src="img/goldenjewerlyset/multipleset.jpg" alt="">
+            </div>
+
+            <!-- Product Info -->
+        <div class="product-details">
+    <div class="product-header">
+        <span class="category-tag">Exquisite Jewelry</span>
+        <h1>Golden Blossom Jewelry Set</h1>
+        <p style="color: var(--muted); font-size: 1.1rem;">
+            A delicate gold-tone jewelry set inspired by blooming florals, designed to
+            add a warm, elegant glow to any look.
+        </p>
+    </div>
+
+    <div class="price-box">
+        <span class="price-label">Product Price</span>
+        <span class="main-price">₦30,000</span>
+    </div>
+
+    <p style="margin-bottom: 24px;">
+        Crafted with refined floral detailing and a radiant gold-tone finish, this
+        jewelry set brings effortless sophistication and charm, perfect for both
+        everyday elegance and special occasions.
+    </p>
+
+    <ul class="feature-list">
+        <li>Elegant gold-tone finish</li>
+        <li>Floral-inspired handcrafted design</li>
+        <li>Lightweight and comfortable to wear</li>
+        <li>Skin-friendly & tarnish-resistant</li>
+        <li>Presented in our signature luxury packaging</li>
+    </ul>
+
+    <a href="#inquiry" class="submit-btn" style="text-decoration: none; display: block; text-align: center;">
+        Order Now
+    </a>
+</div>
+
+        </div>
+
+            <section class="pricing-section">
+  <h2 class="pricing-title">Join Our Elite Users Today</h2>
+
+  <div class="pricing-grid">
+    <div class="price-card" data-value="1 piece – ₦25,000">
+      <span class="badge">Starter</span>
+      <h3>Buy 1</h3>
+      <p class="old-price">₦30,500</p>
+      <p class="new-price">₦30,000</p>
+    </div>
+
+    <div class="price-card" data-value="2 pieces – ₦49,000">
+      <span class="badge">Popular</span>
+      <h3>Buy 2</h3>
+      <p class="old-price">₦60,000</p>
+      <p class="new-price">₦59,000</p>
+    </div>
+
+    <div class="price-card featured" data-value="3 pieces – ₦73,000">
+      <span class="badge">Best Value</span>
+      <h3>Buy 3</h3>
+      <p class="old-price">₦100,000</p>
+      <p class="new-price">₦88,000</p>
+    </div>
+
+    <div class="price-card" data-value="4 pieces – ₦97,000">
+      <span class="badge">Wholesale</span>
+      <h3>Buy 4</h3>
+      <p class="old-price">₦120,000</p>
+      <p class="new-price">₦117,000</p>
+    </div>
+  </div>
+
+  <p class="pricing-note">
+    🚚 Free Nationwide Delivery • Not Sold In Stores
+  </p>
+</section>
+        <!-- Inquiry Form Section -->
+        <section id="inquiry" class="inquiry-card">
+            <h2>Place Your Order</h2>
+            <p>Complete the form below and our customer care representative will contact you within 24 hours.</p>
+<form 
+method="post"
+  id="contact-form">
+    <input type="hidden" name="Product_Name" value="Golden Blossom Jewelry Set">
+    <div class="form-grid">
+        <div class="input-group">
+            <label>Full Name *</label>
+            <input type="text" id="fullName" name="Full_Name" required>
+        </div>
+
+        <div class="input-group">
+            <label>Phone Number *</label>
+            <input id="number" type="tel" name="Phone_no" required>
+        </div>
+
+        <div class="input-group">
+            <label>Alternative Number</label>
+            <input id="altNumber" type="tel" name="Alternative_Phone_no">
+        </div>
+
+        <div class="input-group">
+            <label>State *</label>
+            <input id="state"type="text" name="State" required>
+        </div>
+        
+        <input id="authentic" type="text" name="company" style="display:none">
+                <div class="input-group">
+            <label>Price / Quantity *</label>
+            <select id="quantity" name="Quantity" required>
+                <option value="">Select quantity</option>
+                <option value="1  piece – ₦30,000">1 Piece – ₦30,000</option>
+                <option value="2 pieces – ₦59,000 (₦1,000 off)">2 Pieces – ₦59,000  (₦1,000 off)</option>
+                <option value="3 pieces – ₦88,000 (₦2,000 off)">3 Pieces – ₦88,000  (₦2,000 off)</option>
+                <option value="4 pieces – ₦117,000 (₦3,000 off)">4 Pieces – ₦117,000  (₦3,000 off)</option>
+            </select>
+        </div>
+        <div class="input-group full-width">
+            <label>Full Delivery Address *</label>
+            <textarea id name="Address" required></textarea>
+        </div>
+
+
+
+        <div class="input-group full-width">
+            <label>You Can Drop a Note</label>
+            <textarea name="Note" placeholder="Optional message..."></textarea>
+        </div>
+    </div>
+
+
+    <button type="submit" class="submit-btn" id="submit-button">
+        Buy Now
+    </button>
+    <div id="status" class="status-msg"></div>
+</form>
+        </section>
+        <div id="contact" style=" display: flex; align-items: center; justify-content: center; ">
+                     <a href="https://wa.link/wqmf5w" class="submit-btn" style="background: #25D366; color: white; border: none; border-radius: 6px; text-align: center; display: inline-flex; align-items: center; justify-content: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	<path fill="currentColor" d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+</svg>WhatsApp Us</a>
+
+        </div>    
+    </main>
+
+   <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Authentic Essentials</h3>
+                    <p>Reliable, creative, and professional services tailored to meet your needs.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a >Event Planning</a></li>
+                        <li><a >Decoration</a></li>
+                        <li><a >Garment Production</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/">About Us</a></li>
+                        <li><a href="/">Process</a></li>
+                        <li><a href="/">Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://wa.link/wqmf5w">WhatsApp</a></li>
+                        <li><a >Email</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center; font-size: 0.8rem; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.05);">
+                &copy; 2026 Authentic Essentials. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+<script>
+
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
+  const dropdownToggle = document.querySelector(".dropdown");
+  const dropdown = document.querySelector(".dropdown-menu");
+
+
+  hamburger.addEventListener('click', (e) => {
+            navLinks.classList.toggle('open');
+            e.stopPropagation()
+        });
+        document.addEventListener('click',()=>{
+             navLinks.classList.remove('open')
+        })
+         dropdownToggle.addEventListener("click", (e) => {
+dropdown.classList.toggle('on')
+e.stopPropagation()
+  });
+
+     
+</script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+emailjs.init("dGB1IWLi1iqIdXRuU");
+
+const form = document.getElementById("contact-form");
+const status = document.getElementById("status");
+const button = document.getElementById("submit-button");
+
+status.className = 'status-msg success';
+status.className = 'status-msg error';
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  // Honeypot spam check
+  if (document.getElementById("authentic").value !== "") return;
+
+  button.disabled = true;
+  button.textContent = "Processing...";
+
+  emailjs.sendForm("service_27fi8m8", "template_ec9mfre", this)
+    .then(() => {
+       status.style.display = 'block';
+            status.style.backgroundColor = '#d4edda';
+            status.style.color = '#155724';
+            status.textContent = 'Thank you! Your order has been placed successfully.';
+
+
+      form.reset();
+      button.textContent = "Order Sent";
+                  setTimeout(() => {
+               location.href = 'thankyou.html';
+            }, 2000);
+    })
+    .catch(() => {
+ status.style.display = 'block';
+        status.style.backgroundColor = '#f8d7da';
+        status.style.color = '#721c24';
+        status.textContent = 'Something went wrong. Please try again.';
+
+        button.disabled = false;
+        button.textContent = 'Buy Now';
+    });
+});
+</script>
+<script>
+  const priceCards = document.querySelectorAll('.price-card');
+  const quantitySelect = document.getElementById('quantity');
+
+  priceCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const value = card.dataset.value;
+      quantitySelect.value = value;
+
+      // Scroll to form
+      document.getElementById('inquiry').scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
+</body>
+</html>
