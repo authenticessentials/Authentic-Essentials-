@@ -33,9 +33,13 @@
             background-color: var(--bg);
             color: var(--text);
             line-height: 1.6;
-            
+            width: 100%;
             overflow-x: hidden;
             padding-top: var(--nav-height);
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
         }
 
         h1,
@@ -54,12 +58,14 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            width: 100% !important;
             padding: 0 20px;
         }
 
         .containerII {
             max-width: 1200px;
             margin: 0 2.5em;
+            width: 100% !important;
             padding: 0 13px;
         }
 
@@ -83,7 +89,6 @@
             height: 65px;
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-
         }
 
         .nav-content {
@@ -125,7 +130,8 @@
         nav.scrolled .nav-links a {
             color: var(--text);
         }
-/* 
+
+        /* 
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -144,86 +150,88 @@
         .nav-links a:hover {
             color: var(--accent) !important;
         }
-/* Dropdown styles – fits perfectly with your design */
-/* Dropdown container – flex to keep trigger + toggle side-by-side */
-.nav-links .dropdown {
-    position: relative;
-    display: flex;
-    align-items: center;
-  
-    color: inherit;
-}
 
-/* Main trigger link */
-.nav-links .dropdown .drop-trigger {
-    /* color: inherit */
-    text-decoration: none;
-    display: flex;
-    align-items: center;    
-    gap: 6px;
-    cursor: pointer;
-}
+        /* Dropdown styles – fits perfectly with your design */
+        /* Dropdown container – flex to keep trigger + toggle side-by-side */
+        .nav-links .dropdown {
+            position: relative;
+            display: flex;
+            align-items: center;
 
-/* Toggle button (arrow) */
- .drop-toggle {
-    background: none;
-    border: none;
-    /* color: inherit; */
-    font-size: 0.8em;
-    cursor: pointer;
-    padding: 0 8px;
-    margin-left: 4px;
-    transition: transform 0.3s ease;
-}
+            color: inherit;
+        }
 
-/* Rotate arrow on open or hover */
-.nav-links .dropdown:hover .drop-toggle,
-.nav-links .dropdown.open .drop-toggle {
-    transform: rotate(180deg);
-}
+        /* Main trigger link */
+        .nav-links .dropdown .drop-trigger {
+            /* color: inherit */
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+        }
 
-/* Dropdown menu – shown on hover (desktop) OR when .open class added (mobile click) */
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: calc(100% + 8px);
-    left: 0;
-    min-width: 240px;
-      width: max-content;
-    background: var(--white);
-    border-radius: 8px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-    z-index: 999;
-    overflow: hidden;
-}
+        /* Toggle button (arrow) */
+        .drop-toggle {
+            background: none;
+            border: none;
+            /* color: inherit; */
+            font-size: 0.8em;
+            cursor: pointer;
+            padding: 0 8px;
+            margin-left: 4px;
+            transition: transform 0.3s ease;
+        }
 
-.nav-links .dropdown:hover .dropdown-menu,
-.nav-links .dropdown.open .dropdown-menu {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
+        /* Rotate arrow on open or hover */
+        .nav-links .dropdown:hover .drop-toggle,
+        .nav-links .dropdown.open .drop-toggle {
+            transform: rotate(180deg);
+        }
 
-/* Submenu links (unchanged – premium feel) */
-.dropdown-menu a {
-    display: block;
-    padding: 14px 24px;
-    color: var(--text);
-    font-size: 0.95rem;
-    font-weight: 500;
-    text-transform: none;
-    transition: background 0.3s ease, color 0.3s ease;
-}
+        /* Dropdown menu – shown on hover (desktop) OR when .open class added (mobile click) */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            min-width: 240px;
+            width: max-content;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+            z-index: 999;
+            overflow: hidden;
+        }
 
-.dropdown-menu a:hover {
-    background: rgba(212, 160, 23, 0.08);
-    color: var(--accent);
-}
+        .nav-links .dropdown:hover .dropdown-menu,
+        .nav-links .dropdown.open .dropdown-menu {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* Submenu links (unchanged – premium feel) */
+        .dropdown-menu a {
+            display: block;
+            padding: 14px 24px;
+            color: var(--text);
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-transform: none;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background: rgba(212, 160, 23, 0.08);
+            color: var(--accent);
+        }
+
         /* Hero Section */
         .hero {
             height: calc(100vh - var(--nav-height));
@@ -236,28 +244,31 @@
             color: var(--white);
             text-align: left;
             position: relative;
+            
         }
+
         /* Background swipe illusion */
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: inherit;
-    background-size: cover;
-    background-position: center;
-    transform: translateX(0);
-    transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 0;
-}
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: inherit;
+            background-size: cover;
+            background-position: center;
+            transform: translateX(0);
+            transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 0;
+        }
 
-/* When changing slide */
-.hero.swipe-next::before {
-    transform: translateX(-100%);
-}
+        /* When changing slide */
+        .hero.swipe-next::before {
+            transform: translateX(-100%);
+        }
 
-.hero.swipe-prev::before {
-    transform: translateX(100%);
-}
+        .hero.swipe-prev::before {
+            transform: translateX(100%);
+        }
+
         .hero-content {
             max-width: 100%;
             opacity: 0;
@@ -282,93 +293,101 @@
             margin-bottom: 30px;
             opacity: 0.9;
         }
+
         /* Overlay helper */
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.45);
-    z-index: 0;
-}
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+            z-index: 0;
+        }
 
-.hero .containerII {
-    position: relative;
-    z-index: 2;
-}
+        .hero .containerII {
+            position: relative;
+            z-index: 2;
+        }
 
-/* Tabs wrapper */
-.hero-tabs {
-    margin-top: 35px;
-    display: flex;
-    gap: 32px;
-    align-items: center;
-}
+        /* Tabs wrapper */
+        .hero-tabs {
+            margin-top: 35px;
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
 
-/* Individual tab */
-.hero-tab {
-    background: none;
-    border: none;
-    color: rgba(255,255,255,0.7);
-    font-size: 0.95rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    cursor: pointer;
-    padding: 0;
-    position: relative;
-    text-align: left;
-}
+        /* Individual tab */
+        .hero-tab {
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            padding: 0;
+            position: relative;
+            text-align: left;
+        }
 
-/* Active tab text */
-.hero-tab.active {
-    color: #fff;
-}
+        /* Active tab text */
+        .hero-tab.active {
+            color: #fff;
+        }
 
-/* Progress bar (ONLY ACTIVE WILL SHOW) */
-.hero-tab .progress {
-    display: none;
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    height: 3px;
-    width: 0%;
-    background: #ff8c00; /* Nokia orange */
-    border-radius: 2px;
-}
+        /* Progress bar (ONLY ACTIVE WILL SHOW) */
+        .hero-tab .progress {
+            display: none;
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            height: 3px;
+            width: 0%;
+            background: #ff8c00;
+            /* Nokia orange */
+            border-radius: 2px;
+        }
 
-/* Show progress ONLY for active */
-.hero-tab.active .progress {
-    display: block;
-}
+        /* Show progress ONLY for active */
+        .hero-tab.active .progress {
+            display: block;
+        }
 
-/* Play / Pause */
-.hero-controls {
-    margin-top: 25px;
-    display: flex;
-    align-items: center;
-    gap: 28px;
-}
+        /* Play / Pause */
+        .hero-controls {
+            margin-top: 25px;
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
 
-/* Pause / Play button */
-#playPause {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.4);
-    background: transparent;
-    color: #ff8c00;
-    font-size: 0.9rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
+        /* Pause / Play button */
+        #playPause {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            background: transparent;
+            color: #ff8c00;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
 
-#playPause:hover {
-    border-color: #ff8c00;
-    background: rgba(255,140,0,0.08);
-}
-#playPause.play::before { content: "▶"; }
-#playPause.pause::before { content: "❚❚"; }
+        #playPause:hover {
+            border-color: #ff8c00;
+            background: rgba(255, 140, 0, 0.08);
+        }
+
+        #playPause.play::before {
+            content: "▶";
+        }
+
+        #playPause.pause::before {
+            content: "❚❚";
+        }
 
         .btn {
             display: inline-block;
@@ -607,7 +626,7 @@
             line-height: 1.6;
             font-size: 1.1rem;
         }
-        
+
         .why-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -646,10 +665,12 @@
             color: var(--accent);
             font-size: 1.5rem;
         }
+
         .why-icon svg {
             width: 44px;
             height: 34px;
-        }   
+        }
+
         .why-card h4 {
             font-family: 'Playfair Display', serif;
             font-size: 1.25rem;
@@ -662,12 +683,13 @@
             font-size: 0.9rem;
             line-height: 1.5;
         }
-  #services{
+
+        #services {
             background: var(--bg);
             background-image: url('https://chatgpt.com/backend-api/estuary/content?id=file_000000004a9871f48b77d0a004fa59ae&ts=491319&p=fs&cid=1&sig=9be5aa6067197b8d558b177c049748f083bae4d8ed4f725c8e64c4b6818e4efe&v=0');
         }
-      
-     
+
+
         /* Footer */
         footer {
             background: #0d121a;
@@ -731,7 +753,8 @@
         nav.scrolled .hamburger svg {
             color: var(--primary);
         }
-         /* Services Section */
+
+        /* Services Section */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -742,7 +765,7 @@
             background: var(--white);
             border-radius: 4px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
             transition: all 0.4s ease;
         }
 
@@ -753,7 +776,7 @@
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
         }
 
         .service-img {
@@ -771,6 +794,7 @@
             margin-bottom: 15px;
             color: var(--primary);
         }
+
         .service-info p {
             color: var(--muted);
             margin-bottom: 20px;
@@ -797,7 +821,8 @@
             color: var(--accent);
             font-weight: bold;
         }
-         /* Why Us Section */
+
+        /* Why Us Section */
         .why-us {
             background: #fff;
             padding: 70px 0;
@@ -842,7 +867,8 @@
             color: var(--muted);
             font-size: 0.95rem;
         }
-        .abt{
+
+        .abt {
             background-repeat: no-repeat;
             background-size: cover;
             display: flex;
@@ -852,64 +878,73 @@
             background-image: url(img/planewhitebg.jpg);
             padding: 60px 0;
         }
-        .abt-text{
+
+        .abt-text {
             /* background: var(--white); */
-            padding:  30px 50px;
+            padding: 30px 50px;
             border-radius: 8px;
             /* box-shadow: 0 10px 30px rgba(48, 48, 48, 0.2); */
             transition: all 1s ease-out;
         }
+
         .cat-btn {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    border: 1.5px solid var(--accent);
-    background: #eaf2ff;
-    color: var(--accent);
-    font-size: 30px;
-    cursor: pointer;
-    transition: all 0.25s ease;
-}
-.cat-btn:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(212, 160, 23, 0.4);
-}
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 1.5px solid var(--accent);
+            background: #eaf2ff;
+            color: var(--accent);
+            font-size: 30px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
 
-.cat-btn:hover {
-    background: var(--accent);
-    color: #fff;
-}
-.cat-btn svg{
-    width:24px;
-    height:24px;
-}
-.cat-controls{
-    display:none
-}
+        .cat-btn:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(212, 160, 23, 0.4);
+        }
 
-.cat-grid::-webkit-scrollbar {
-    display: none;
-}
-.abt-header{
-    margin-bottom: 6px;
-    padding: 0 20px;
-}
-.nav-toggle {
-    display: none;
-    font-size: 1.8rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
+        .cat-btn:hover {
+            background: var(--accent);
+            color: #fff;
+        }
 
-    /* ===== Tablet Layout ===== */
+        .cat-btn svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .cat-controls {
+            display: none
+        }
+
+        .cat-grid::-webkit-scrollbar {
+            display: none;
+        }
+
+        .abt-header {
+            margin-bottom: 6px;
+            padding: 0 20px;
+        }
+
+        .nav-toggle {
+            display: none;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* ===== Tablet Layout ===== */
         @media (max-width: 768px) {
             .grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-                 .why-grid {
+
+            .why-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
             .hero h1 {
                 font-size: 3rem;
             }
@@ -917,20 +952,23 @@
             .hero p {
                 font-size: 1.05rem;
             }
-            .cat-controls{
-                display:flex;
-                justify-content:center;
-                gap:15px;
-                margin-bottom:20px;
+
+            .cat-controls {
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+                margin-bottom: 20px;
             }
+
             .cat-card {
                 height: 300px;
-                 flex: 0 0 95%;
-                 border-radius: 16px;
+                flex: 0 0 95%;
+                border-radius: 16px;
             }
-               .cat-grid {
+
+            .cat-grid {
                 display: flex;
-                overflow-x: auto;         
+                overflow-x: auto;
                 /* gap: 15px; */
                 justify-content: space-between;
                 align-items: center;
@@ -945,6 +983,7 @@
                 min-height: 40px;
             }
         }
+
         /* Mobile Devices */
         @media (max-width: 767px) {
 
@@ -953,7 +992,8 @@
                 gap: 40px;
             }
 
-   .nav-links {
+
+            .nav-links {
                 position: absolute;
                 top: 100%;
                 left: 0;
@@ -969,6 +1009,7 @@
                 transition: all 0.3s ease;
                 box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
             }
+
             .nav-links li {
                 border-bottom: 1px solid #eee;
                 text-decoration: none !important;
@@ -976,39 +1017,49 @@
                 display: flex;
                 justify-content: flex-start;
                 width: 100%;
-                color: var(--primary);            }
+                color: var(--primary);
+            }
+
             .nav-links a {
                 text-decoration: none !important;
                 width: 100%;
                 height: 100%;
-                     padding: 15px;
-                     font-size: 0.7em;
+                padding: 15px;
+                font-size: 0.7em;
                 border-bottom: none;
                 color: var(--primary);
             }
+
             .nav-links a:last-child {
                 border-bottom: none;
             }
+
             .nav-links a:hover {
                 background: var(--accent);
                 color: #fff !important;
             }
+
             .nav-links.open {
                 transform: translateY(0);
                 opacity: 1;
                 pointer-events: auto;
             }
-
+            .container{
+                padding: 0 14px;
+            }
             .containerII {
                 margin: 0 auto;
+                padding : 0 14px
             }
-            .cat-controls{
-                display:flex;
-                justify-content:flex-start;
+
+            .cat-controls {
+                display: flex;
+                justify-content: flex-start;
                 margin: 0 1.2em;
-                gap:15px;
-                margin-bottom:20px;
+                gap: 15px;
+                margin-bottom: 20px;
             }
+
             #shop .grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 16px;
@@ -1018,16 +1069,19 @@
             .product-card {
                 border-radius: 10px;
             }
-            .hamburger{
+
+            .hamburger {
                 display: flex;
             }
+
             .product-image {
                 aspect-ratio: 1 / 1.25;
                 /* more balanced on mobile */
             }
-             .cat-grid {
+
+            .cat-grid {
                 display: flex;
-                overflow-x: auto;         
+                overflow-x: auto;
                 /* gap: 15px; */
                 justify-content: space-between;
                 align-items: center;
@@ -1045,17 +1099,21 @@
                 flex: 0 0 95%;
                 height: 200px;
                 border-radius: 16px;
-            
+
             }
+
             .why-header h2 {
                 font-size: 1.9rem;
             }
-            .section-title h2{
+
+            .section-title h2 {
                 font-size: 1.9rem;
             }
+
             h2 {
                 font-size: 1.9rem !important;
             }
+
             .product-info {
                 padding: 8px;
             }
@@ -1101,56 +1159,66 @@
                 font-size: 0.9rem;
             }
 
-            
+
 
             .cat-card h3 {
                 font-size: 1.7rem;
             }
+
             .hero-content {
                 margin-top: 10px;
 
             }
+
             .hero-tabs {
                 margin-top: 25px;
             }
-            .hero h1{
+
+            .hero h1 {
                 margin-bottom: 15px;
                 font-size: 2rem;
             }
-            .hero p{
+
+            .hero p {
                 font-size: 0.9rem;
                 font-weight: bold;
                 margin-bottom: 25px;
             }
-                .hero-controls {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 18px;
-    }
 
-    .hero-tabs {
-        width: 100%;
-        justify-content: space-between;
-    }
+            .hero-controls {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 18px;
+            }
 
-    #playPause {
-        margin-bottom: 4px;
-    }
+            .hero-tabs {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            #playPause {
+                margin-bottom: 4px;
+            }
         }
+
         @media (max-width: 340px) {
-           .hero h1 {
+            .hero h1 {
                 font-size: 1.6rem;
             }
 
             .hero p {
                 font-size: 0.85rem;
             }
+
             .hero-content {
-                margin-top: 35px;}
-                .hero-tabs {
-                    margin-top: 15px;
-        }}
-    
+                margin-top: 35px;
+            }
+
+            .hero-tabs {
+                margin-top: 15px;
+            }
+        }
+        
     </style>
 </head>
 
@@ -1159,71 +1227,75 @@
     <nav id="navbar">
         <div class="container nav-content">
             <a href="#" class="brand">Authentic Essentials</a>
-          <ul class="nav-links" id="navLinks">
-    <li><a href="">Home</a></li>
-    <li class="dropdown">
-    <a href="#shop" class="drop-trigger">Products    <svg  xmlns="http://www.w3.org/2000/svg" width="14" height="24" viewBox="0 0 24 24">
-	<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 8l8 8l8-8" />
-</svg></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="">Home</a></li>
+                <li class="dropdown">
+                    <a href="#shop" class="drop-trigger">Products <svg xmlns="http://www.w3.org/2000/svg" width="14"
+                            height="24" viewBox="0 0 24 24">
+                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="m4 8l8 8l8-8" />
+                        </svg></a>
 
-     
-    <ul class="dropdown-menu">
-        <li><a href="./emeraldgracienecklace.html">Emerald Gracie Necklace</a></li>
-      <li><a href="./primefitcaps.html">PrimeFit Cap</a></li>
-      <li><a href="./vinatageshinecklace.html">Vintage Shi Pearl Necklace</a></li>
-      <li><a href="./goldenblossomjewelry.html">Golden Blossom Jewelry</a></li>
-      <li><a href="./royalredautogele.html">Royal Red Auto-Gele</a></li>
-    </ul>
-</li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-</ul>
+
+                    <ul class="dropdown-menu">
+                        <li><a href="./emeraldgracienecklace.html">Emerald Gracie Necklace</a></li>
+                        <li><a href="./primefitcaps.html">PrimeFit Cap</a></li>
+                        <li><a href="./vinatageshinecklace.html">Vintage Shi Pearl Necklace</a></li>
+                        <li><a href="./goldenblossomjewelry.html">Golden Blossom Jewelry</a></li>
+                        <li><a href="./royalredautogele.html">Royal Red Auto-Gele</a></li>
+                    </ul>
+                </li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+            </ul>
 
             <div class="hamburger" id="hamburger">
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-	<path fill="currentColor" fill-rule="evenodd" d="M0 3.75A.75.75 0 0 1 .75 3h14.5a.75.75 0 0 1 0 1.5H.75A.75.75 0 0 1 0 3.75M0 8a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H.75A.75.75 0 0 1 0 8m.75 3.5a.75.75 0 0 0 0 1.5h14.5a.75.75 0 0 0 0-1.5z" clip-rule="evenodd" />
-</svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                    <path fill="currentColor" fill-rule="evenodd"
+                        d="M0 3.75A.75.75 0 0 1 .75 3h14.5a.75.75 0 0 1 0 1.5H.75A.75.75 0 0 1 0 3.75M0 8a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H.75A.75.75 0 0 1 0 8m.75 3.5a.75.75 0 0 0 0 1.5h14.5a.75.75 0 0 0 0-1.5z"
+                        clip-rule="evenodd" />
+                </svg>
             </div>
         </div>
     </nav>
     <!-- Hero Section -->
-<header class="hero" id="hero">
-    <div class="hero-overlay"></div>
+    <header class="hero" id="hero">
+        <div class="hero-overlay"></div>
 
-    <div class="containerII">
-        <div id="hero-content" class="hero-content visible">
-            <h1 id="hero-title">Elevate Your <br><i>Everyday</i></h1>
-            <p id="hero-text">
-                Genuine, high-quality products curated to bring comfort
-                <br>and authenticity to your daily life.
-            </p>
-            <a href="#shop" class="btn">Explore Collection</a>
-        </div>
+        <div class="containerII">
+            <div id="hero-content" class="hero-content visible">
+                <h1 id="hero-title">Elevate Your <br><i>Everyday</i></h1>
+                <p id="hero-text">
+                    Genuine, high-quality products curated to bring comfort
+                    <br>and authenticity to your daily life.
+                </p>
+                <a href="#shop" class="btn">Explore Collection</a>
+            </div>
 
-        <!-- Controls -->
-        <div class="hero-controls">
-            <button id="playPause" aria-label="Pause">
-                
-            </button>
-        </div>
+            <!-- Controls -->
+            <div class="hero-controls">
+                <button id="playPause" aria-label="Pause">
 
-        <!-- Tabs -->
-        <div class="hero-tabs">
-            <button class="hero-tab active" data-index="0">
-                Fashion
-                <span class="progress"></span>
-            </button>
-            <button class="hero-tab" data-index="1">
-                Event Planning
-                <span class="progress"></span>
-            </button>
-            <button class="hero-tab" data-index="2">
-               Event Decor
-                <span class="progress"></span>
-            </button>
+                </button>
+            </div>
+
+            <!-- Tabs -->
+            <div class="hero-tabs">
+                <button class="hero-tab active" data-index="0">
+                    Fashion
+                    <span class="progress"></span>
+                </button>
+                <button class="hero-tab" data-index="1">
+                    Event Planning
+                    <span class="progress"></span>
+                </button>
+                <button class="hero-tab" data-index="2">
+                    Event Decor
+                    <span class="progress"></span>
+                </button>
+            </div>
         </div>
-    </div>
-</header>
+    </header>
     <!-- Featured Products -->
 
     <section id="shop" class="section container">
@@ -1232,7 +1304,7 @@
             <p>Our most loved pieces, hand-picked for their quality.</p>
         </div>
         <div class="grid">
-             <div class="product-card">
+            <div class="product-card">
                 <div class="product-image"><img src="img/Vintage Shi pearl Necklace.jpeg" loading="lazy" alt="Pearl">
                 </div>
                 <div class="product-info">
@@ -1246,7 +1318,7 @@
                     <a href="./vinatageshinecklace.html">View More</a>
                 </div>
             </div>
-           
+
             <div class="product-card">
                 <div class="product-image"><img src="img/PrimeFit cap II.jpg" loading="lazy" alt="Cap"></div>
                 <div class="product-info">
@@ -1257,7 +1329,7 @@
                     <a href="./primefitcaps.html">View More</a>
                 </div>
             </div>
-           
+
             <div class="product-card">
                 <div class="product-image"><img src="img/Gloden Blossom Jewel.jpeg" loading="lazy" alt="Gold"></div>
                 <div class="product-info">
@@ -1269,7 +1341,7 @@
                     <a href="./goldenblossomjewelry.html">View More</a>
                 </div>
             </div>
-             <div class="product-card">
+            <div class="product-card">
                 <div class="product-image"><img src="img/Emerald Gracie.jpeg" loading="lazy" alt="Necklace"></div>
                 <div class="product-info">
                     <h3 class="product-name">Emerald Gracie Necklace</h3>
@@ -1283,22 +1355,22 @@
     </section>
     <!-- What WE Offer -->
     <section class="cat-section">
-   <div class="cat-header">
-    <h2 class="cat-title">What We Offer</h2>
+        <div class="cat-header">
+            <h2 class="cat-title">What We Offer</h2>
 
-    <div class="cat-controls">
-        <button class="cat-btn prev" aria-label="Scroll left">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-	<path fill="currentColor" d="M14 17.308L8.692 12L14 6.692l.708.708l-4.6 4.6l4.6 4.6z" />
-</svg>
-        </button>
-        <button class="cat-btn next" aria-label="Scroll right">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-	<path fill="currentColor" d="m13.292 12l-4.6-4.6l.708-.708L14.708 12L9.4 17.308l-.708-.708z" />
-</svg>
-        </button>
-    </div>
-</div>
+            <div class="cat-controls">
+                <button class="cat-btn prev" aria-label="Scroll left">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M14 17.308L8.692 12L14 6.692l.708.708l-4.6 4.6l4.6 4.6z" />
+                    </svg>
+                </button>
+                <button class="cat-btn next" aria-label="Scroll right">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="m13.292 12l-4.6-4.6l.708-.708L14.708 12L9.4 17.308l-.708-.708z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
         <div class="cat-grid">
             <div class="cat-card">
                 <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=800"
@@ -1323,16 +1395,17 @@
             </div>
         </div>
     </section>
-     <section id="services" class="section container">
+    <section id="services" class="section container">
         <div class="section-title">
             <h2>Our Professional Services</h2>
             <p>We go beyond products to deliver creative solutions tailored to your needs.</p>
         </div>
-        
+
         <div class="services-grid">
             <!-- Event Planning -->
             <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=800" class="service-img" alt="Event Planning">
+                <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=800"
+                    class="service-img" alt="Event Planning">
                 <div class="service-info">
                     <h3>Event Planning</h3>
                     <p>Giving details from concept to execution for seamless, organized, and memorable occasions.</p>
@@ -1348,7 +1421,8 @@
 
             <!-- Event Decoration -->
             <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1478147427282-58a87a120781?auto=format&fit=crop&q=80&w=800" class="service-img" alt="Event Decoration">
+                <img src="https://images.unsplash.com/photo-1478147427282-58a87a120781?auto=format&fit=crop&q=80&w=800"
+                    class="service-img" alt="Event Decoration">
                 <div class="service-info">
                     <h3>Event Decoration</h3>
                     <p>Creative and elegant decoration services thoughtfully designed to suit each unique occasion.</p>
@@ -1364,7 +1438,8 @@
 
             <!-- Commercial Sewing -->
             <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1502217625004-89c03571bcca?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHNld2luZ3xlbnwwfHwwfHx8MA%3D%3D" class="service-img" alt="Commercial Sewing">
+                <img src="https://images.unsplash.com/photo-1502217625004-89c03571bcca?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHNld2luZ3xlbnwwfHwwfHx8MA%3D%3D"
+                    class="service-img" alt="Commercial Sewing">
                 <div class="service-info">
                     <h3>Garment Production</h3>
                     <p>Professional commercial sewing for schools, organizations, and special institutional needs.</p>
@@ -1379,14 +1454,17 @@
             </div>
         </div>
     </section>
-<section id="about"  class="abt">
-       <div class="section-title abt-header">
+    <section id="about" class="abt">
+        <div class="section-title abt-header">
             <h2>About Us</h2>
             <strong style="font-size: larger;">Welcome to Authentic Essential Store</strong>
         </div>
-        <div class="abt-text" >
+        <div class="abt-text">
             <p style="font-size: 1.25rem; line-height: 1.8; color: var(--text);">
-                Authentic Essentials is a trusted multi-category online store committed to providing genuine, high-quality products that make everyday living easier and more convenient. We bring together a wide range of carefully selected essentials under one reliable platform, so our customers can shop with confidence and ease.
+                Authentic Essentials is a trusted multi-category online store committed to providing genuine,
+                high-quality products that make everyday living easier and more convenient. We bring together a wide
+                range of carefully selected essentials under one reliable platform, so our customers can shop with
+                confidence and ease.
             </p>
         </div>
     </section>
@@ -1399,69 +1477,94 @@
         </div>
         <div class="why-grid">
             <div class="why-card">
-                <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-	<g fill="none">
-		<path fill="#dc8a14" d="m12 3l.295-.69a.75.75 0 0 0-.59 0zm0 18l-.372.651a.75.75 0 0 0 .744 0zm6.394-15.26l-.295.69zM8.024 18.727l-.373.652zm3.68-16.416L5.312 5.05L5.9 6.43l6.394-2.74zM4.25 6.659v6.86h1.5v-6.86zm3.401 12.72l3.977 2.272l.744-1.302l-3.977-2.273zm4.721 2.272l3.977-2.272l-.744-1.303l-3.977 2.273zm7.378-8.133V6.66h-1.5v6.86zm-1.06-8.467l-6.395-2.74l-.59 1.378l6.394 2.74zm1.06 1.608c0-.7-.417-1.332-1.06-1.608l-.591 1.379a.25.25 0 0 1 .151.23zm-3.401 12.72a6.75 6.75 0 0 0 3.401-5.86h-1.5a5.25 5.25 0 0 1-2.645 4.557zM4.25 13.519a6.75 6.75 0 0 0 3.401 5.86l.744-1.303a5.25 5.25 0 0 1-2.645-4.558zM5.31 5.05a1.75 1.75 0 0 0-1.06 1.608h1.5c0-.1.06-.19.152-.23z" />
-		<path stroke="#dc8a14" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m15 10l-4 4l-2-2" />
-	</g>
-</svg></div>
+                <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24">
+                        <g fill="none">
+                            <path fill="#dc8a14"
+                                d="m12 3l.295-.69a.75.75 0 0 0-.59 0zm0 18l-.372.651a.75.75 0 0 0 .744 0zm6.394-15.26l-.295.69zM8.024 18.727l-.373.652zm3.68-16.416L5.312 5.05L5.9 6.43l6.394-2.74zM4.25 6.659v6.86h1.5v-6.86zm3.401 12.72l3.977 2.272l.744-1.302l-3.977-2.273zm4.721 2.272l3.977-2.272l-.744-1.303l-3.977 2.273zm7.378-8.133V6.66h-1.5v6.86zm-1.06-8.467l-6.395-2.74l-.59 1.378l6.394 2.74zm1.06 1.608c0-.7-.417-1.332-1.06-1.608l-.591 1.379a.25.25 0 0 1 .151.23zm-3.401 12.72a6.75 6.75 0 0 0 3.401-5.86h-1.5a5.25 5.25 0 0 1-2.645 4.557zM4.25 13.519a6.75 6.75 0 0 0 3.401 5.86l.744-1.303a5.25 5.25 0 0 1-2.645-4.558zM5.31 5.05a1.75 1.75 0 0 0-1.06 1.608h1.5c0-.1.06-.19.152-.23z" />
+                            <path stroke="#dc8a14" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="m15 10l-4 4l-2-2" />
+                        </g>
+                    </svg></div>
                 <h4>100% Authentic</h4>
                 <p>Every item is verified genuine. We take pride in delivering only the real deal to your doorstep.</p>
             </div>
             <div class="why-card">
-                <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-	<path fill="#dc8a14" d="m8.962 18.91l.464-.588zM12 5.5l-.54.52a.75.75 0 0 0 1.08 0zm3.038 13.41l.465.59zm-5.612-.588C7.91 17.127 6.253 15.96 4.938 14.48C3.65 13.028 2.75 11.335 2.75 9.137h-1.5c0 2.666 1.11 4.7 2.567 6.339c1.43 1.61 3.254 2.9 4.68 4.024zM2.75 9.137c0-2.15 1.215-3.954 2.874-4.713c1.612-.737 3.778-.541 5.836 1.597l1.08-1.04C10.1 2.444 7.264 2.025 5 3.06C2.786 4.073 1.25 6.425 1.25 9.137zM8.497 19.5c.513.404 1.063.834 1.62 1.16s1.193.59 1.883.59v-1.5c-.31 0-.674-.12-1.126-.385c-.453-.264-.922-.628-1.448-1.043zm7.006 0c1.426-1.125 3.25-2.413 4.68-4.024c1.457-1.64 2.567-3.673 2.567-6.339h-1.5c0 2.198-.9 3.891-2.188 5.343c-1.315 1.48-2.972 2.647-4.488 3.842zM22.75 9.137c0-2.712-1.535-5.064-3.75-6.077c-2.264-1.035-5.098-.616-7.54 1.92l1.08 1.04c2.058-2.137 4.224-2.333 5.836-1.596c1.659.759 2.874 2.562 2.874 4.713zm-8.176 9.185c-.526.415-.995.779-1.448 1.043s-.816.385-1.126.385v1.5c.69 0 1.326-.265 1.883-.59c.558-.326 1.107-.756 1.62-1.16z" />
-</svg></div>
+                <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24">
+                        <path fill="#dc8a14"
+                            d="m8.962 18.91l.464-.588zM12 5.5l-.54.52a.75.75 0 0 0 1.08 0zm3.038 13.41l.465.59zm-5.612-.588C7.91 17.127 6.253 15.96 4.938 14.48C3.65 13.028 2.75 11.335 2.75 9.137h-1.5c0 2.666 1.11 4.7 2.567 6.339c1.43 1.61 3.254 2.9 4.68 4.024zM2.75 9.137c0-2.15 1.215-3.954 2.874-4.713c1.612-.737 3.778-.541 5.836 1.597l1.08-1.04C10.1 2.444 7.264 2.025 5 3.06C2.786 4.073 1.25 6.425 1.25 9.137zM8.497 19.5c.513.404 1.063.834 1.62 1.16s1.193.59 1.883.59v-1.5c-.31 0-.674-.12-1.126-.385c-.453-.264-.922-.628-1.448-1.043zm7.006 0c1.426-1.125 3.25-2.413 4.68-4.024c1.457-1.64 2.567-3.673 2.567-6.339h-1.5c0 2.198-.9 3.891-2.188 5.343c-1.315 1.48-2.972 2.647-4.488 3.842zM22.75 9.137c0-2.712-1.535-5.064-3.75-6.077c-2.264-1.035-5.098-.616-7.54 1.92l1.08 1.04c2.058-2.137 4.224-2.333 5.836-1.596c1.659.759 2.874 2.562 2.874 4.713zm-8.176 9.185c-.526.415-.995.779-1.448 1.043s-.816.385-1.126.385v1.5c.69 0 1.326-.265 1.883-.59c.558-.326 1.107-.756 1.62-1.16z" />
+                    </svg></div>
                 <h4>Curated with Love</h4>
                 <p>Hand-picked selection of products that meet our high standards for quality and aesthetics.</p>
             </div>
             <div class="why-card">
-                <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
-	<path fill="#dc8a14" d="M128.896 736H96a32 32 0 0 1-32-32V224a32 32 0 0 1 32-32h576a32 32 0 0 1 32 32v96h164.544a32 32 0 0 1 31.616 27.136l54.144 352A32 32 0 0 1 922.688 736h-91.52a144 144 0 1 1-286.272 0H415.104a144 144 0 1 1-286.272 0zm23.36-64a143.872 143.872 0 0 1 239.488 0H568.32c17.088-25.6 42.24-45.376 71.744-55.808V256H128v416zm655.488 0h77.632l-19.648-128H704v64.896A144 144 0 0 1 807.744 672m48.128-192l-14.72-96H704v96zM688 832a80 80 0 1 0 0-160a80 80 0 0 0 0 160m-416 0a80 80 0 1 0 0-160a80 80 0 0 0 0 160" />
-</svg></div>
+                <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024"
+                        viewBox="0 0 1024 1024">
+                        <path fill="#dc8a14"
+                            d="M128.896 736H96a32 32 0 0 1-32-32V224a32 32 0 0 1 32-32h576a32 32 0 0 1 32 32v96h164.544a32 32 0 0 1 31.616 27.136l54.144 352A32 32 0 0 1 922.688 736h-91.52a144 144 0 1 1-286.272 0H415.104a144 144 0 1 1-286.272 0zm23.36-64a143.872 143.872 0 0 1 239.488 0H568.32c17.088-25.6 42.24-45.376 71.744-55.808V256H128v416zm655.488 0h77.632l-19.648-128H704v64.896A144 144 0 0 1 807.744 672m48.128-192l-14.72-96H704v96zM688 832a80 80 0 1 0 0-160a80 80 0 0 0 0 160m-416 0a80 80 0 1 0 0-160a80 80 0 0 0 0 160" />
+                    </svg></div>
                 <h4>Fast Shipping</h4>
                 <p>Reliable delivery partners ensure your essentials arrive safely and on time.</p>
             </div>
             <div class="why-card">
-                <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-	<path fill="none" stroke="#dc8a14" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.464 16.828C2 15.657 2 14.771 2 11s0-5.657 1.464-6.828C4.93 3 7.286 3 12 3s7.071 0 8.535 1.172S22 7.229 22 11s0 4.657-1.465 5.828C19.072 18 16.714 18 12 18c-2.51 0-3.8 1.738-6 3v-3.212c-1.094-.163-1.899-.45-2.536-.96" />
-</svg></div>
+                <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24">
+                        <path fill="none" stroke="#dc8a14" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="1.5"
+                            d="M3.464 16.828C2 15.657 2 14.771 2 11s0-5.657 1.464-6.828C4.93 3 7.286 3 12 3s7.071 0 8.535 1.172S22 7.229 22 11s0 4.657-1.465 5.828C19.072 18 16.714 18 12 18c-2.51 0-3.8 1.738-6 3v-3.212c-1.094-.163-1.899-.45-2.536-.96" />
+                    </svg></div>
                 <h4>24/7 Support</h4>
                 <p>Our customer care team is always here to help with any questions or concerns.</p>
             </div>
         </div>
     </section>
 
-         <section id="about" class="why-us">
+    <section id="about" class="why-us">
         <div class="container">
             <div class="section-title">
                 <h2>Our Mission & Vision</h2>
                 <p>Building more than a store — we're creating your go-to destination for reliability.</p>
             </div>
-            
-            <div class="why-us-grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); margin-bottom: 80px;">
-                <div class="why-us-item" style="text-align: left; background: var(--secondary); border-left: 5px solid var(--accent);">
+
+            <div class="why-us-grid"
+                style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); margin-bottom: 80px;">
+                <div class="why-us-item"
+                    style="text-align: left; background: var(--secondary); border-left: 5px solid var(--accent);">
                     <h3 style="font-size: 1.8rem; margin-bottom: 15px;">Our Mission</h3>
-                    <p style="font-size: 1.1rem; line-height: 1.7; color: var(--text);">To deliver authentic products, dependable service, and a stress-free shopping experience. We’re building more than a store — we’re creating your go-to destination for quality and reliability.</p>
+                    <p style="font-size: 1.1rem; line-height: 1.7; color: var(--text);">To deliver authentic products,
+                        dependable service, and a stress-free shopping experience. We’re building more than a store —
+                        we’re creating your go-to destination for quality and reliability.</p>
                 </div>
-                <div class="why-us-item" style="text-align: left; background: var(--secondary); border-left: 5px solid var(--accent);">
+                <div class="why-us-item"
+                    style="text-align: left; background: var(--secondary); border-left: 5px solid var(--accent);">
                     <h3 style="font-size: 1.8rem; margin-bottom: 15px;">Our Vision</h3>
-                    <p style="font-size: 1.1rem; line-height: 1.7; color: var(--text);">To grow into a widely recognized and trusted brand known for authenticity, variety, and excellent customer service — building lasting relationships with customers locally and beyond.</p>
+                    <p style="font-size: 1.1rem; line-height: 1.7; color: var(--text);">To grow into a widely recognized
+                        and trusted brand known for authenticity, variety, and excellent customer service — building
+                        lasting relationships with customers locally and beyond.</p>
                 </div>
             </div>
         </div>
-         <section class="section container" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 8px; margin-bottom: 10px;">
-        <h2 style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 2.5rem; margin-bottom: 20px;">Let’s Work Together</h2>
-        <p style="color: var(--muted); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
-            Whether you’re planning an event, decorating a venue, or producing garments, Authentic Essentials is ready to serve you.
-        </p>
-            <a href="https://wa.link/wqmf5w" class="btn" style="background: #25D366; color: white; border: none; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-	<path fill="currentColor" d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
-</svg> WhatsApp Us</a>
+        <section class="section container"
+            style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 8px; margin-bottom: 10px;">
+            <h2
+                style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 2.5rem; margin-bottom: 20px;">
+                Let’s Work Together</h2>
+            <p
+                style="color: var(--muted); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Whether you’re planning an event, decorating a venue, or producing garments, Authentic Essentials is
+                ready to serve you.
+            </p>
+            <a href="https://wa.link/wqmf5w" class="btn"
+                style="background: #25D366; color: white; border: none; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; gap: 6px;"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                        d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+                </svg> WhatsApp Us</a>
+        </section>
     </section>
-     </section>
 
- 
+
     <footer>
         <div class="container">
             <div class="footer-grid">
@@ -1494,7 +1597,8 @@
                     </ul>
                 </div>
             </div>
-            <div style="text-align: center; font-size: 0.8rem; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.05);">
+            <div
+                style="text-align: center; font-size: 0.8rem; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.05);">
                 &copy; 2026 Authentic Essentials. All rights reserved.
             </div>
         </div>
