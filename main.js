@@ -90,7 +90,7 @@ const slides = [
     {
         image: "img/ibrahim-boran-m8YjB0noWiY-unsplash-compressed.jpg",
         title: "Professional <br><i>Event Planning</i>",
-        text: "We go beyond selling products to tranforming your eventinto an unforgettable experience."
+        text: "We go beyond selling products to tranforming your event into an unforgettable experience."
     },
     {
         image: "img/hero3.jpg",
