@@ -830,43 +830,38 @@
             background-size: cover;
             background-image: url(img/purple-pastel-gradient-background-soft-vintage_53876-117629.avif);
         }
+.why-us-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+    margin-bottom: 80px;
+}
 
-        .why-us-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
+.why-us-item {
+    background: var(--secondary);
+    border-left: 5px solid var(--accent);
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-        .why-us-item {
-            text-align: center;
-            padding: 12px 40px;
-            background: #fdfdfd;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
+.why-us-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
 
-        .why-us-item:hover {
-            background: var(--secondary);
-            transform: translateY(-5px);
-        }
+.why-us-item h3 {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    color: var(--primary);
+}
 
-        .why-us-item .icon {
-            font-size: 2.5rem;
-            color: var(--accent);
-            margin-bottom: 20px;
-            display: inline-block;
-        }
-
-        .why-us-item h3 {
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-            color: var(--primary);
-        }
-
-        .why-us-item p {
-            color: var(--muted);
-            font-size: 0.95rem;
-        }
+.why-us-item p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text);
+}
 
         .abt {
             background-repeat: no-repeat;
@@ -1044,9 +1039,7 @@
                 opacity: 1;
                 pointer-events: auto;
             }
-            .container{
-                padding: 0 14px;
-            }
+         
             .containerII {
                 margin: 0 auto;
                 padding : 0 14px
@@ -1421,7 +1414,7 @@
 
             <!-- Event Decoration -->
             <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1478147427282-58a87a120781?auto=format&fit=crop&q=80&w=800"
+                <img src="img/istockphoto-event decorations.jpg"
                     class="service-img" alt="Event Decoration">
                 <div class="service-info">
                     <h3>Event Decoration</h3>
@@ -1526,24 +1519,26 @@
                 <h2>Our Mission & Vision</h2>
                 <p>Building more than a store — we're creating your go-to destination for reliability.</p>
             </div>
+            <div class="why-us-grid">
+    <div class="why-us-item">
+        <h3>Our Mission</h3>
+        <p>
+            To deliver authentic products, dependable service, and a stress-free
+            shopping experience. We’re building more than a store — we’re creating
+            your go-to destination for quality and reliability.
+        </p>
+    </div>
 
-            <div class="why-us-grid"
-                style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); margin-bottom: 80px;">
-                <div class="why-us-item"
-                    style="text-align: left; background: var(--secondary); border-left: 5px solid var(--accent);">
-                    <h3 style="font-size: 1.8rem; margin-bottom: 15px;">Our Mission</h3>
-                    <p style="font-size: 1.1rem; line-height: 1.7; color: var(--text);">To deliver authentic products,
-                        dependable service, and a stress-free shopping experience. We’re building more than a store —
-                        we’re creating your go-to destination for quality and reliability.</p>
-                </div>
-                <div class="why-us-item"
-                    style="text-align: left; background: var(--secondary); border-left: 5px solid var(--accent);">
-                    <h3 style="font-size: 1.8rem; margin-bottom: 15px;">Our Vision</h3>
-                    <p style="font-size: 1.1rem; line-height: 1.7; color: var(--text);">To grow into a widely recognized
-                        and trusted brand known for authenticity, variety, and excellent customer service — building
-                        lasting relationships with customers locally and beyond.</p>
-                </div>
-            </div>
+    <div class="why-us-item">
+        <h3>Our Vision</h3>
+        <p>
+            To grow into a widely recognized and trusted brand known for authenticity,
+            variety, and excellent customer service — building lasting relationships
+            with customers locally and beyond.
+        </p>
+    </div>
+</div>
+
         </div>
         <section class="section container"
             style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 8px; margin-bottom: 10px;">
